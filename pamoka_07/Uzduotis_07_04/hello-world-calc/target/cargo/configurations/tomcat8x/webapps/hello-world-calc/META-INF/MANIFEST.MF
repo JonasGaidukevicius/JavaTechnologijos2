@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Implementation-Title: Spring Boot Blank Project (from https://github.c
+ om/making/spring-boot-blank)
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: jonasnamai
+Implementation-Vendor-Id: it.akademija
+Spring-Boot-Version: 2.0.0.RELEASE
+Main-Class: org.springframework.boot.loader.WarLauncher
+Start-Class: it.akademija.App
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Created-By: Apache Maven 3.5.2
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/hello-world-calc
+

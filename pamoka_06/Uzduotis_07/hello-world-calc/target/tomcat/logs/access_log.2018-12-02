@@ -1,0 +1,10 @@
+127.0.0.1 - - [02/Dec/2018:16:26:40 +0200] "GET /calc?left=1&right=2 HTTP/1.1" 404 - http-bio-8081-exec-1 0
+127.0.0.1 - - [02/Dec/2018:16:26:40 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-2 0
+127.0.0.1 - - [02/Dec/2018:16:26:46 +0200] "GET /App/calc?left=1&right=2 HTTP/1.1" 404 - http-bio-8081-exec-3 0
+127.0.0.1 - - [02/Dec/2018:16:26:47 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-4 0
+127.0.0.1 - - [02/Dec/2018:16:27:11 +0200] "GET /hello-world-calc/calc?left=1&right=2 HTTP/1.1" 200 42 http-bio-8081-exec-5 679
+127.0.0.1 - - [02/Dec/2018:16:27:33 +0200] "GET /hello-world-calc/calc?left=5&right=2 HTTP/1.1" 200 42 http-bio-8081-exec-6 8
+127.0.0.1 - - [02/Dec/2018:16:27:37 +0200] "GET /hello-world-calc/calc?left=5&right=8 HTTP/1.1" 200 43 http-bio-8081-exec-7 15
+127.0.0.1 - - [02/Dec/2018:16:27:41 +0200] "GET /hello-world-calc/calc?left=5&right=18793 HTTP/1.1" 200 50 http-bio-8081-exec-8 6
+127.0.0.1 - - [02/Dec/2018:16:27:45 +0200] "GET /hello-world-calc/calc?left=54875&right=18793 HTTP/1.1" 200 54 http-bio-8081-exec-9 4
+127.0.0.1 - - [02/Dec/2018:16:28:02 +0200] "GET /hello-world-calc/calc?left=55&right=45 HTTP/1.1" 200 46 http-bio-8081-exec-10 4

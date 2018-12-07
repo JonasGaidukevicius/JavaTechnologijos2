@@ -1,0 +1,53 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import pic from '../ProductList/img/KingWear-KW06.jpg';
+
+const ProductCardComponent = (props) => {
+    return (
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <p>{props.id}</p>
+                </div>
+                <div class="col-2">
+                    <img src={pic} alt="Smartwatch" width="50px"></img>
+                </div>
+                <div class="col-8">
+                    <p>{props.title}</p>
+                </div>
+            </div>
+        </div>
+    );
+    }
+
+
+{/*
+
+        <div className="card" style={{ width: "18rem" }}>
+            <img className="card-img-top" src={pic} alt="Smartwatch"></img>
+            <div className="card-body">
+                <h5 className="card-title">{props.title}</h5>
+                <p className="card-text">{props.description}</p>
+                <p className="card-text">Price: {props.price} Euro</p>
+                <p className="card-text">Quantity: {props.quantity} pcs.</p>
+                <a href="#" className="btn btn-primary">Product details</a>
+            </div>
+        </div>
+        );
+
+    */}
+
+
+{/*
+ProductCardComponent.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired
+};
+*/}
+
+
+export default ProductCardComponent;

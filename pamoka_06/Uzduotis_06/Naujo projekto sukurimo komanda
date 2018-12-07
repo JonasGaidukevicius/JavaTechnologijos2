@@ -1,0 +1,4 @@
+mvn archetype:generate -DgroupId=lt.mokymai \
+-DartifactId=ThirdMavenProject -Dpackage=lt.mokymai.maven \
+-Dversion=1.0-SNAPSHOT \
+-DarchetypeArtifactId=maven-archetype-quickstart

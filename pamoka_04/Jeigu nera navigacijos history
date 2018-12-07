@@ -1,0 +1,4 @@
+Ten realiai buvo dvi eilutes ProductAdministrationContainer
+import { withRouter } from 'react-router';
+ir pabaigoje
+export default withRouter(ProductAdministrationContainer);

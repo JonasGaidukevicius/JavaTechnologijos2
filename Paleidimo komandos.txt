@@ -1,0 +1,23 @@
+
+----------Po migracijos i 2.0.0 ir auksciau-----------------
+
+mvn clean install spring-boot:run -Dspring-boot.run.arguments=--server.port=8081
+
+mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.0:run \
+ -Dcargo.maven.containerId=tomcat8x -Dcargo.servlet.port=8081 \
+ -Dcargo.maven.containerUrl=http://repo1.maven.org/maven2/org/apache/tomcat/tomcat/8.5.35/tomcat-8.5.35.zip
+
+---------------------------------Iki migracijos i 2.0.0--------------------
+Paleidzia Spring-boot aplikacija (ant 8080 porto): 
+mvn spring-boot:run
+
+Paleidzia Spring-boot aplikacija ant tomcat serverio (lyg tai) ant porto 8081.
+mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war \
+ -Dmaven.tomcat.port=8081
+
+
+Instaliuoja Spring-boot aplikacija:
+mvn clean install
+
+Parengia failus Eclipsei:
+mvn eclipse:eclipse

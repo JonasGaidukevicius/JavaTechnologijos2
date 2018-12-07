@@ -1,0 +1,31 @@
+Uzduotis 02_04
+Padarytas produktu krepselio atvaizdavimas. Ivedimo dar nera, todel ji pasidarau per mokytojo tinklalapi.
+Taip pat, padarytas produkto istrynimas is krepselio.
+
+
+Dabar reikia sugalvoti, kaip priimti varototojo varda, kur ji saugoti ir kaip panaudoti krepselio saugojimui.
+-------------------------------------------------
+Uzduotis 02_03
+Padaryta, kad paspaudus ant "Product details" ieinama i ta produkta.
+ten yra 2 mygtukai: BACK - grizta atgal (veikia jau) ir ADD TO CART. Sista neveikia dar.
+
+Dabar reikia padaryti prekiu krepselio vaizda.
+----------------------------------------------------
+Uzduotis 02_02 (kitaip)
+1. Produktu administravimo puslapyje padarytas mygtukas, kuri paspaudus atsidaro naujo produkto suvedimo forma
+   uvedus visus duomenis, produktas yra issaugomas serveryje.
+
+
+Dabar reikia daryti langa, kad pasirinkus produkta, atsidarytto jo kortle ir butu mygtukas ideti i krepseli
+--------------------------------------------------
+Uzduotis 02_02
+1. Padarytas konkretaus produkto redagavimas.
+
+
+Dabar reikia ideti mygtuka, kad butu galima nauja produkta ideti.
+-------------------------------------------
+Uzduotis 02_01
+
+1. Perdarytas navigacijos meniu. Palikta tik "Home", "Administration", vartotojo ivedimo laukas ir mygtukas, kuris tures vaizduoti prekiu krepseli.
+
+2. "Administration" dabar veda i kitoki prekiu sarasa, is kurio galima bus redaguoti pasirinkta produkta arba paspaudus mygtuka, ivesti nauja produkta. Mygtuko kolkas nera.

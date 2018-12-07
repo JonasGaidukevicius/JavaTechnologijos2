@@ -1,0 +1,40 @@
+Suskuriau klase "Spausdintuvas". Cia idejau PostConstruct ir PreDestroy metodus.
+Ji atrodo taip:
+----------------------------------------------------------------------
+@Service(value="spausdintuvas")
+@Scope("singleton")
+public class Spausdintuvas {
+	
+	private List<Product> listToBePrinted = new ArrayList<>();
+	
+	@Autowired
+	public Spausdintuvas (@Qualifier(value="productList")List<Product> listToBePrinted) {
+		this.listToBePrinted = listToBePrinted;
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("@PostConstruct");
+		System.out.println(listToBePrinted);
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("@PreDestroy");
+		System.out.println(listToBePrinted);
+	}
+}
+----------------------------------------------------------------------
+Turiu lauka listToBePrinted, kuris yra List<Product>.
+Tada konstruktoriuje noriu paduoti ta lista, kuris sukurtas is beanso "productList".
+Bet kai leidziu programa, man meta klaida, kad:
+No qualifying bean of type 'java.util.List<lt.itmokymai.spring.Product>' available
+
+Bet tas beansas tikrai yra sukuriamas - man atspausdina:
+BeforeInitialization (Jonas): productList
+AfterInitialization (Jonas): productList
+
+Tik nelabai suprantu, ka reiskia "Įsidėti Spausdintuvas priklausomybę į ServiceC".
+Ar tai reiskia, kad ServiceC klaseje turiu susikurti kintamaji Spausdintuvas tipo?
+Padekite suprasti uzduoties salygas.
+
