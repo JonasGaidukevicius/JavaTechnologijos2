@@ -1,0 +1,16 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+h2
+logs
+
+target
+*.iml
+.idea
+
+out
+*.class
+/.metadata/
+/target
+/.recommenders/
