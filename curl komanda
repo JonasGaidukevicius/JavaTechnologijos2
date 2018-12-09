@@ -1,0 +1,10 @@
+
+curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+
+curl -d '{"username":"slapyvardis", "email":"userName@mail.com", "firstName":"Vardenis", "lastName":"Pavardenis"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/users
+                                                                                                                                                                  
+
+"username": "slapyvardis",
+"email" : "userName@mail.com",
+"firstName": "Vardenis",
+"lastName" : "Pavardenis"

@@ -1,0 +1,19 @@
+Paskaita 8. 4 uzduotis.
+
+1. Ar 39 skaidre yra pavyzdine ar joje esantis kodas turetu buti perkeltas i kazkokia klase kalkuliatoriaus projekte? Nes kalkuliatoriaus projekte HelloWorld klases nera.
+2. Sukuriau RestService klase kalkuliatoriaus projekte.
+   Pazymejau ji kaip @RestController
+   Sukuriau metoda getProductsCollection.
+   Pazymejau metoda getProductsCollection su anotacija @ReguestMapping.
+   Atsikopijavau klase Product is FirstMavenProject.
+
+O ka reiskia atsikopijuoti beans'us is java konfiguracijos klases?
+Kas yra "java konfiguracine klase"?
+FirstMavenProject as buvau susikures klase ProductsFactory, kurioje turejau pasirases kelis produktu beansus. Ar apie sita klase ir eina kalba?
+Bet tai visos ProductsFactory kopijuotis i kalkuliatoriaus projekta nereikia kaip as suprantu? O tai kur tuos beans'us ikopijuoti? I kokia klase?
+	
+3. Ar klaseje RestService turiu tureti kintamaji:
+		private List<Product> productList = new ArrayList<>();
+	kad i ji susideciau visus produktu beans'us?
+
+4. Kaip as galiu pasitikrinti ar servisas veikia? Ar as tureciau pasirasyti metoda @PostConstruct klaseje RestService ar kazkaip kitaip?

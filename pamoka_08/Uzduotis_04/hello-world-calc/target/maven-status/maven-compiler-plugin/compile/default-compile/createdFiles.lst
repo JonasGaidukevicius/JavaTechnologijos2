@@ -1,4 +1,7 @@
 it/akademija/HelloController.class
 it/akademija/HelloController$Result.class
 it/akademija/App.class
+it/akademija/Product.class
+it/akademija/RestService.class
 it/akademija/AppConfig.class
+it/akademija/ProductsFacory.class
