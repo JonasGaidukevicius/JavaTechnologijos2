@@ -16,14 +16,14 @@ import it.akademija.dao.UserDao;
 
 @RestController
 @RequestMapping(value = "/api/products")
-public class ProductController {
+public class ProductsController {
 
 	private final ProductDao productDao; // pridedame DAO
 	
 	
 	//konstruktorius
 	@Autowired
-	public ProductController(ProductDao productDao) {
+	public ProductsController(ProductDao productDao) {
 	this.productDao = productDao;
 	}
 	
