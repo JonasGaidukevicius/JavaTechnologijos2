@@ -38,7 +38,6 @@ public class InMemoryProductDao implements ProductDao{
 
 	@Override
 	public void updateProduct(Product productToUpdate) {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < products.size(); i++) {
 			if(productToUpdate.getId() == products.get(i).getId()) {
 				products.set(i, productToUpdate);

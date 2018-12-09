@@ -12,7 +12,7 @@
 	
 	
 	
-	<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="byName">
+	<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="byType">
 	</bean>
 	
 	
