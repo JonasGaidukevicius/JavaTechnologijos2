@@ -1,4 +1,4 @@
-package it.akademija.products;
+package it.akademija.cart;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,45 +13,39 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.akademija.dao.UserDao;
+import it.akademija.products.Product;
 
 @RestController
-@RequestMapping(value = "/api/products")
-public class ProductsController {
+@RequestMapping(value = "/api/users/{user}/cart")
+public class CartsController {
 
-	private final ProductDao productDao; // pridedame DAO
+	private final CartDao cartDao; // pridedame DAO
 	
 	
 	//konstruktorius
 	@Autowired
-	public ProductsController(ProductDao productDao) {
-	this.productDao = productDao;
+	public CartsController(CartDao cartDao) {
+	this.cartDao = cartDao;
 	}
 	
 	/* Apdoros užklausas: GET /api/users */
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Product> getProducts() {
+	public List<Cart> getProducts() {
 		//return Collections.emptyList(); -> pirma versija
-		return productDao.getProducts();// skaitome per DAO
+		return cartDao.getCart();// skaitome per DAO
 	}
 		
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createProduct(@RequestBody final CreateProductCommand cmd) {
-		//user.setUsername(cmd.getUsername());
-		//user.setFirstName(cmd.getFirstName());
-		//user.setLastName(cmd.getLastName());
-		//user.setEmail(cmd.getEmail());
-		//userDao.createUser(user);
-		
-		productDao.createProduct(new Product(cmd.getId(), cmd.getTitle(), cmd.getImage(), cmd.getDescription(),
-								cmd.getPrice(), cmd.getQuantity()));
+	public void createUser(@RequestBody final CreateCartCommand cmd) {		
+		cartDao.createCart(new Cart(cmd.getId(), cmd.getTitle(), cmd.getImage()));
 		System.out.println(cmd);
 	}
 	
-	@RequestMapping(path = "/products/{title}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/users/{user}/cart/{title}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteProduct( @PathVariable final String title ) {
-		productDao.deleteProduct(title);
+		cartDao.deleteCart(title);
 		System.out.println("Deleting product: " + title);
 	}
 	

@@ -12,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import it.akademija.dao.UserDao;
 
 @RestController
-@RequestMapping(value = "/api/products")
+@Api(value = "product")
+@RequestMapping(value = "/products")
 public class ProductsController {
 
 	private final ProductDao productDao; // pridedame DAO
@@ -29,6 +33,7 @@ public class ProductsController {
 	
 	/* Apdoros užklausas: GET /api/users */
 	@RequestMapping(method = RequestMethod.GET)
+	@ApiOperation(value="Get products",notes="Returns existing products")
 	public List<Product> getProducts() {
 		//return Collections.emptyList(); -> pirma versija
 		return productDao.getProducts();// skaitome per DAO
@@ -36,7 +41,8 @@ public class ProductsController {
 		
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createProduct(@RequestBody final CreateProductCommand cmd) {
+	@ApiOperation(value="Create new product",notes="Creates new product with provided data")
+	public void createProduct(@ApiParam(value="Product data",required=true)@RequestBody final CreateProductCommand cmd) {
 		//user.setUsername(cmd.getUsername());
 		//user.setFirstName(cmd.getFirstName());
 		//user.setLastName(cmd.getLastName());
@@ -50,6 +56,7 @@ public class ProductsController {
 	
 	@RequestMapping(path = "/products/{title}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ApiOperation(value="Delete product",notes="Deletes selected product")
 	public void deleteProduct( @PathVariable final String title ) {
 		productDao.deleteProduct(title);
 		System.out.println("Deleting product: " + title);
