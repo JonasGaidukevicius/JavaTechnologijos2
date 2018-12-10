@@ -1,4 +1,4 @@
-package it.akademija.products;
+package it.akademija.model;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,50 +20,56 @@ import io.swagger.annotations.ApiParam;
 import it.akademija.dao.UserDao;
 
 @RestController
-@Api(value = "product")
-@RequestMapping(value = "/products")
-public class ProductsController {
+@Api(value = "user")
+@RequestMapping(value = "/api/users")
+public class UserController {
 
-	private final ProductDao productDao; // pridedame DAO
-	
+	private final UserDao userDao; // pridedame DAO
+	//private User user;
 	
 	//konstruktorius
 	@Autowired
-	public ProductsController(ProductDao productDao) {
-	this.productDao = productDao;
+	public UserController(UserDao userDao) {
+	this.userDao = userDao;
 	}
 	
 	/* Apdoros užklausas: GET /api/users */
 	@RequestMapping(method = RequestMethod.GET)
-	@ApiOperation(value="Get products",notes="Returns existing products")
-	public List<Product> getProducts() {
+	@ApiOperation(value="Get users",notes="Returns registered users")
+	public List<User> getUsers() {
 		//return Collections.emptyList(); -> pirma versija
-		return productDao.getProducts();// skaitome per DAO
+		return userDao.getUsers();// skaitome per DAO
 	}
 		
-	@RequestMapping(path = "/products/{id}", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(value="Create new product",notes="Creates new product with provided data")
-	public void createProduct(@ApiParam(value="Product data",required=true)
+	@ApiOperation(value="Create user",notes="Creates user with data")
+	
+	//sena eilute
+	//public void createUser(@RequestBody final CreateUserCommand cmd) {
+	
+	public void createUser(@ApiParam(value="User Data",required=true)
 		@Valid
-		@RequestBody final CreateProductCommand cmd) {
+		@RequestBody final CreateUserCommand cmd) {
 		//user.setUsername(cmd.getUsername());
 		//user.setFirstName(cmd.getFirstName());
 		//user.setLastName(cmd.getLastName());
 		//user.setEmail(cmd.getEmail());
 		//userDao.createUser(user);
 		
-		productDao.createProduct(new Product(cmd.getId(), cmd.getTitle(), cmd.getImage(), cmd.getDescription(),
-								cmd.getPrice(), cmd.getQuantity()));
-		System.out.println(cmd);
+		userDao.createUser(new User(cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail()));
+		
+		
+		//userDao.createUser();	
+	System.out.println(cmd);
 	}
 	
-	@RequestMapping(path = "/products/{title}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{username}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@ApiOperation(value="Delete product",notes="Deletes selected product")
-	public void deleteProduct( @PathVariable final String title ) {
-		productDao.deleteProduct(title);
-		System.out.println("Deleting product: " + title);
+	@ApiOperation(value="Delete user",notes="Deletes selected user")
+	public void deleteUser( @PathVariable final String username ) {
+		userDao.deleteUser(username);
+		System.out.println("Deleting user: " + username);
 	}
 	
 }
