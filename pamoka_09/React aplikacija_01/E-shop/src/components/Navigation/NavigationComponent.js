@@ -7,10 +7,6 @@ var NavigationComponent = (props) => {
 
         <div>
             <div>
-
-
-
-
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,10 +24,11 @@ var NavigationComponent = (props) => {
                             </li>
                         </ul>
                         <form className="form-inline">
-                            <input type="text" className="form-control mr-sm-2" name="currentUser" placeholder="User"></input>
+                        <input type="text" className="form-control mr-sm-2" onChange={props.handleChangeOnName} 
+                          value={props.userName} name="currentUser" placeholder="User"></input>
                       </form>
                       <Link className="btn btn-success" to="/shoppingCart">Shopping cart</Link>
-                    </div>
+                    </div>                  
                 </nav>
 
 

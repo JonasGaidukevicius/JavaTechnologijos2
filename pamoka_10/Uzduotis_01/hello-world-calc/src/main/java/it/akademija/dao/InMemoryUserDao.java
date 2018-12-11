@@ -9,10 +9,11 @@ import org.springframework.stereotype.Repository;
 import it.akademija.model.User;
 
 @Repository
-public class InMemoryUserDao implements UserDao{
+public class InMemoryUserDao {
+	//public class InMemoryUserDao implements UserDao{
 	
 	private final List<User> users = new CopyOnWriteArrayList<>();
-
+/*
 	@Override
 	public List<User> getUsers() {
 		return Collections.unmodifiableList(users);
@@ -31,5 +32,5 @@ public class InMemoryUserDao implements UserDao{
 				break;
 			}
 		}
-	}
+	}*/
 }

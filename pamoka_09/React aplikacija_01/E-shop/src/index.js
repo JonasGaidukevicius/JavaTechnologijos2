@@ -8,6 +8,7 @@ import { Switch, Redirect, Route } from 'react-router';
 import { BrowserRouter, Link } from 'react-router-dom';
 import NoMatch from './components/Navigation/NoMatch';
 import NavigationComponent from './components/Navigation/NavigationComponent';
+import NavigationContainer from './components/Navigation/NavigationContainer';
 import ProductListContainer from './components/ProductList/ProductListContainer';
 import NewProductContainer from './components/ProductAdministration/NewProductContainer';
 import UserContext from './UserContext';
@@ -15,6 +16,8 @@ import ProductAdministrationListContainer from './components/ProductAdministrati
 import EditProductContainer from './components/ProductAdministration/EditProductContainer';
 import OneProductContainer from './components/ProductList/OneProductContainer';
 import ShoppingCartContainer from './components/ShoppingCart/ShoppingCartContainer';
+import '../node_modules/jquery/dist/jquery';
+import '../node_modules/popper.js/dist/popper';
 
 var DemonstruotiNavigacija = (props) => {
     var goHome = () => props.history.push("/");
@@ -33,8 +36,8 @@ var DemonstruotiNavigacija = (props) => {
 
 ReactDOM.render((
     <BrowserRouter>
-        <UserContext.Provider value={"User: Jonas"}>
-            <NavigationComponent>
+        <UserContext.Provider value={{user: "Jonas"}}>
+            <NavigationContainer>
                 <Switch>
                     <Route exact path='/' component={ProductListContainer} />
                     <Route exact path="/products/:id" component={OneProductContainer} />
@@ -60,7 +63,7 @@ ReactDOM.render((
                     <Route path="*" component={NoMatch} />
                     <Route component={NoMatch} />
                 </Switch>
-            </NavigationComponent>
+            </NavigationContainer>
         </UserContext.Provider>
     </BrowserRouter>
 ), document.getElementById('root'));

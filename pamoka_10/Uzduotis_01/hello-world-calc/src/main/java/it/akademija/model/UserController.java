@@ -18,19 +18,25 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import it.akademija.dao.UserDao;
+import it.akademija.dao.UserService;
 
 @RestController
 @Api(value = "user")
 @RequestMapping(value = "/api/users")
 public class UserController {
 
-	private final UserDao userDao; // pridedame DAO
+	//private final UserDao userDao; // pridedame DAO
 	//private User user;
+	private final UserService userService;
 	
 	//konstruktorius
 	@Autowired
+	/*senas
 	public UserController(UserDao userDao) {
 	this.userDao = userDao;
+	}*/
+	public UserController(UserService userService) {
+		this.userService = userService;
 	}
 	
 	/* Apdoros užklausas: GET /api/users */
@@ -38,7 +44,7 @@ public class UserController {
 	@ApiOperation(value="Get users",notes="Returns registered users")
 	public List<User> getUsers() {
 		//return Collections.emptyList(); -> pirma versija
-		return userDao.getUsers();// skaitome per DAO
+		return userService.getUsers();// skaitome per DAO
 	}
 		
 	@RequestMapping(method = RequestMethod.POST)
@@ -57,7 +63,7 @@ public class UserController {
 		//user.setEmail(cmd.getEmail());
 		//userDao.createUser(user);
 		
-		userDao.createUser(new User(cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail()));
+		userService.createUser(new User(cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail()));
 		
 		
 		//userDao.createUser();	
@@ -68,7 +74,7 @@ public class UserController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@ApiOperation(value="Delete user",notes="Deletes selected user")
 	public void deleteUser( @PathVariable final String username ) {
-		userDao.deleteUser(username);
+		userService.deleteUser(username);
 		System.out.println("Deleting user: " + username);
 	}
 	

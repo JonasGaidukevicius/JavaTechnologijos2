@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pic from './img/KingWear-KW06.jpg';
 import { Link } from 'react-router-dom';
+import UserContext from '../../UserContext';
 
 const OneProductComponent = (props) => {
     return (
@@ -18,6 +19,14 @@ const OneProductComponent = (props) => {
             </div>
             <div className="row">
                 <div className="col-6">
+                <UserContext.Consumer>
+                {
+                    (userNameObject) => {
+                       return   <p>User: {userNameObject.user} Eur.</p>
+                    }
+                 
+                }
+            </UserContext.Consumer>
                 <Link className="btn btn-primary" to="/admin/products/new">Add to cart</Link> &nbsp;
                 <Link className="btn btn-success" to="/">Back</Link>
                 </div>
