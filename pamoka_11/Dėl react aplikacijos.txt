@@ -1,0 +1,2 @@
+Panašu, kad nuo čia reikės perdaryti react aplikaciją, nes dabar Spring boot aplikacijoje Product yra išskiadoma į dvi klases: Products ir ProductDetails.
+O gal pavyks Spring boot aplikacijoje duomenis apjunti ir paduoti juos visus komplekte?

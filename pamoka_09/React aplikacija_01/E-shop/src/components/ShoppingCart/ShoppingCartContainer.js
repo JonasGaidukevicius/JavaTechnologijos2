@@ -36,7 +36,7 @@ class ShoppingCartContainer extends React.Component {
             .then(function (response) {
                 console.log("Buvo ivykdytas istrynimas");
                 console.log(response);
-                //this.setState({ products: response.data }); NEVEIKIA, nes THIS cia yra jau nebe klase, o ivykis (ar kazkas tokio)
+                //this.setState({ products: response.data }); //NEVEIKIA, nes THIS cia yra jau nebe klase, o ivykis (ar kazkas tokio)
                 window.location.reload();
             })
             .catch(function (error) {
