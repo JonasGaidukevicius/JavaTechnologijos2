@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import it.akademija.dao.UserDao;
 import it.akademija.dao.UserService;
+//import it.akademija.dao.UserDao;
+//import it.akademija.dao.UserService;
 
 @RestController(value = "restController")
 @Api(value = "user")
@@ -31,9 +32,6 @@ public class UserController {
 
 	// konstruktorius
 	@Autowired
-	/*
-	 * senas public UserController(UserDao userDao) { this.userDao = userDao; }
-	 */
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}

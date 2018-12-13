@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import it.akademija.dao.UserDao;
 import it.akademija.products.CreateProductCommand;
 import it.akademija.products.Product;
 import it.akademija.products.ProductService;

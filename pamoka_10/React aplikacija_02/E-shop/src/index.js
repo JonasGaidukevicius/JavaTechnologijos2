@@ -18,7 +18,7 @@ import OneProductContainer from './components/ProductList/OneProductContainer';
 import ShoppingCartContainer from './components/ShoppingCart/ShoppingCartContainer';
 import '../node_modules/jquery/dist/jquery';
 import '../node_modules/popper.js/dist/popper';
-
+import Pasimokyti from './Pasimokyti';
 var DemonstruotiNavigacija = (props) => {
     var goHome = () => props.history.push("/");
     return (
@@ -42,7 +42,7 @@ ReactDOM.render((
                     <Route exact path='/' component={ProductListContainer} />
                     <Route exact path="/products/:id" component={OneProductContainer} />
                     <Route exact path='/admin' component={ProductAdministrationListContainer} />
-                    
+                    <Route exact path='/pasimokyti' component={Pasimokyti} />
                     {/* Cia anciau ejo i naujo produkto ivedima
                     <Route exact path='/admin' component={NewProductContainer} />
                     */}

@@ -36,17 +36,18 @@ class OneProductContainer extends React.Component {
     }*/
 
      //Čia aš eksperimentuoju
-     handleAddToCart = (event) => {
+     handleAddToCart = (userName) => {
         //let value = this.context;
         //console.log("Spausdinu value - " + value.name);
         //let kitas = value + "kk";
         //console.log("Spausdinu kitą - " + kitas);
         //console.log("Spausdinu this.userName - " + this.userName);
         //console.log("Spausdinu mytgtuko pavadinimą - " + event.target.value);
-        let userDirectory = event.target.value;
+        //let userDirectory = event.target.value;
         //console.log("Spausdinu kelią -" + userDirectory+"-");
-               
-        axios.post('https://itpro2017.herokuapp.com/api/users/{userDirectory}/cart-products', this.state)
+        console.log("Iš add metodo - " + userName);       
+
+        axios.post('https://itpro2017.herokuapp.com/api/users/' + userName + '/cart-products', this.state)
             .then(function (response) {
                 console.log("Spausdinu axios response:");
                 console.log(response);
@@ -61,8 +62,9 @@ class OneProductContainer extends React.Component {
        //const position=this.props.match.params.id;
        
        
-        var pathnameArray = window.location.href.split('/');
-        var position = pathnameArray[pathnameArray.length - 1];
+        //var pathnameArray = window.location.href.split('/');
+        //var position = pathnameArray[pathnameArray.length - 1];
+        var position = this.props.match.params.id;
         //console.log("Koks kelias gaunasi?");
         //console.log('https://itpro2017.herokuapp.com/api/products/' + (position))
 

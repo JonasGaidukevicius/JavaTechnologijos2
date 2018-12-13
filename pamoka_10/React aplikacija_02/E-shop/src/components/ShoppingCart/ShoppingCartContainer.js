@@ -31,18 +31,28 @@ class ShoppingCartContainer extends React.Component {
         //this.setState({ title: event.target.value });
         console.log("Trinu");
         console.log('https://itpro2017.herokuapp.com/api/users/Jonas/cart-products/' + (itemId));
-        
+
         axios.delete('https://itpro2017.herokuapp.com/api/users/Jonas/cart-products/' + (itemId))
-            .then(function (response) {
+            .then((response) => {
                 console.log("Buvo ivykdytas istrynimas");
                 console.log(response);
                 //this.setState({ products: response.data }); //NEVEIKIA, nes THIS cia yra jau nebe klase, o ivykis (ar kazkas tokio)
-                window.location.reload();
+                //window.location.reload();
+                axios.get('https://itpro2017.herokuapp.com/api/users/Jonas/cart-products')
+                    .then((response) => {
+                        this.setState({ products: response.data });
+                        //console.log(response.data);
+                        //console.log("Produktai yra - " + this.state.products);
+                    })
+                    .catch((error) => {
+                        console.log("Ar cia ivyksta klaida?");
+                        console.log(error);
+                    });
             })
             .catch(function (error) {
                 console.log(error);
             });
-        
+
 
     }
 
