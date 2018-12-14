@@ -21,7 +21,7 @@ public class Product {
 	private double price;
 	@Column
 	private int quantity;
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH})
+	@OneToOne(cascade = {CascadeType.ALL}) // CascadeType.MERGE, CascadeType.DETACH})
 	private ProductDetails productDetails;
 	
 	
@@ -31,6 +31,15 @@ public class Product {
 
 	public Product(long id, String title, ProductDetails productDetails, double price, int quantity) {
 		this.id = id;
+		this.title = title;
+		this.price = price;
+		this.quantity = quantity;
+		this.productDetails = productDetails;
+	}
+	
+	//konstruktorius be id
+	public Product(String title, ProductDetails productDetails, double price, int quantity) {
+		//this.id = id;
 		this.title = title;
 		this.price = price;
 		this.quantity = quantity;

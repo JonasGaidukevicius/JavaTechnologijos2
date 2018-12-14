@@ -44,24 +44,17 @@ public class ProductController {
 	@ApiOperation(value = "Create new product", notes = "Creates new product with provided data")
 	public void createProduct(
 			@ApiParam(value = "Product data", required = true) @Valid @RequestBody final CreateProductCommand cmd) {
-		// user.setUsername(cmd.getUsername());
-		// user.setFirstName(cmd.getFirstName());
-		// user.setLastName(cmd.getLastName());
-		// user.setEmail(cmd.getEmail());
-		// userDao.createUser(user);
-
-		// paimu produktu sarasa, paimu paskutini elementa, paimu jo id ir prie jo
-		// pridedu 1
-		// Ir tada naujo produkto id bus naujas ir nesikartojantis
-		// productDao.getProducts().get(productDao.getProducts().size()-1).getId()+1
-		long id = 0;
+		
+		//nebenaudojama
+		/*long id = 0;
 		if (productService.getProducts().size() == 0) {
 			id = 1;
 		} else {
 			id = productService.getProducts().get(productService.getProducts().size() - 1).getId() + 1;
 		}
+		System.out.println("--------------------- id yra: " + id);*/
 
-		productService.createProduct(new Product(id, cmd.getTitle(), new ProductDetails(cmd.getImage(), cmd.getDescription()),
+		productService.createProduct(new Product(cmd.getTitle(), new ProductDetails(cmd.getImage(), cmd.getDescription()),
 				cmd.getPrice(), cmd.getQuantity()));
 		System.out.println(cmd);
 	}

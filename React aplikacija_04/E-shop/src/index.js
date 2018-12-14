@@ -19,6 +19,7 @@ import ShoppingCartContainer from './components/ShoppingCart/ShoppingCartContain
 import '../node_modules/jquery/dist/jquery';
 import '../node_modules/popper.js/dist/popper';
 import Pasimokyti from './Pasimokyti';
+
 var DemonstruotiNavigacija = (props) => {
     var goHome = () => props.history.push("/");
     return (
@@ -27,12 +28,10 @@ var DemonstruotiNavigacija = (props) => {
             <button onClick={goHome}>Go Home</button>
             <pre>             
                 {JSON.stringify(props, null, 1)}
-                {/*{JSON.stringify(props, null, 2)}*/}
             </pre>
         </div>
     );
 };
-
 
 ReactDOM.render((
     <BrowserRouter>
@@ -42,26 +41,11 @@ ReactDOM.render((
                     <Route exact path='/' component={ProductListContainer} />
                     <Route exact path="/products/:id" component={OneProductContainer} />
                     <Route exact path='/admin' component={ProductAdministrationListContainer} />
-                    <Route exact path='/pasimokyti' component={Pasimokyti} />
-                    {/* Cia anciau ejo i naujo produkto ivedima
-                    <Route exact path='/admin' component={NewProductContainer} />
-                    */}
-                    
+                    <Route exact path='/pasimokyti' component={Pasimokyti} />          
                     <Route exact path="/admin/products/new" component={NewProductContainer} />       
                     <Route exact path="/admin/products/:id" component={EditProductContainer} />   
-
                     <Route exact path="/shopping-Cart/:user" component={ShoppingCartContainer} />   
-
                     <Route exact path="/shoppingCart" component={ShoppingCartContainer} />                              
-                    
-
-                    {/*
-                    <Route exact path="/products" component={ProductListContainer} />
-                    <Route exact path="/admin/products/:id" component={ProductAdministrationContainer} />
-                    <Route exact path="/admin/products/new" component={ProductAdministrationContainer} />
-                    <Route exact path="/help" component={DemonstruotiNavigacija} />
-                    */}
-
                     <Route path="*" component={NoMatch} />
                     <Route component={NoMatch} />
                 </Switch>

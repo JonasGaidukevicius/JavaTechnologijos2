@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const AddToCartComponent = (props) => {
-    console.log(props.userName);
+    //console.log(props.userName);
+    
     const onClick =() => {
         props.handleAddToCart(props.userName);
     }
@@ -18,5 +18,3 @@ const AddToCartComponent = (props) => {
 }
 
 export default AddToCartComponent;
-
-//onClick={props.handleAddToCart}
