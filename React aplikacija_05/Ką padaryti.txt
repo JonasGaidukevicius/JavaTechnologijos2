@@ -1,0 +1,4 @@
+Dabar reikia react aplikaciją pritaikyti savo spring-boot aplikacijai.
+Kad reacte būtų nuskaitoma, kas yra paduodama spring-boot aplikacijos.
+Kad reactas paduotų išsaugojimui duomenis tokius, kokius priima spring-boot aplikacija.
+Kad reactas paduotų pakeitimus duomenis tokius, kokius priima spring-boot aplikacija.

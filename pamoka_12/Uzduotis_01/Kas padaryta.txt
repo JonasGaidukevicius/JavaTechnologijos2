@@ -1,0 +1,8 @@
+Uzduotis_01
+Pakeičiau pavadinimus aplikacijų.
+Reacte pavadinimas keičiasi package.json faile.
+Ten yra laukas "name".
+Pavadinime NEGALI BŪTI lietuviškų raidžių ir tarpų.
+
+Spring boot aplikacijoje pavadinimas keičiasi pom.xml faile.
+Ten yra tagas <artifactId>. Jo viduje įrašomas pavadinimas.
