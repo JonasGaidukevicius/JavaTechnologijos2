@@ -17,9 +17,11 @@ class ShoppingCartContainer extends React.Component {
 
     componentDidMount() {
         const userLink = this.props.match.params.user;
-        axios.get('https://itpro2017.herokuapp.com/api/users/' + userLink + '/cart-products')
+        axios.get('http://localhost:8080/api/users/' + userLink + '/cart-products')
             .then((response) => {
                 this.setState({ products: response.data });
+                console.log("Gaunama produktų lentelė");
+                console.log(this.state);
             })
             .catch((error) => {
                 console.log(error);
@@ -28,11 +30,12 @@ class ShoppingCartContainer extends React.Component {
 
     handleDeleteItem = (itemId) => {
         const userLink = this.props.match.params.user;
-        axios.delete('https://itpro2017.herokuapp.com/api/users/' + userLink + '/cart-products/' + (itemId))
+        axios.delete('http://localhost:8080/api/users/' + userLink + '/cart-products/' + (itemId))
             .then((response) => {
-                axios.get('https://itpro2017.herokuapp.com/api/users/' + userLink + '/cart-products')
+                axios.get('http://localhost:8080/api/users/' + userLink + '/cart-products')
                     .then((response) => {
                         this.setState({ products: response.data });
+                        
                     })
                     .catch((error) => {
                         console.log(error);
@@ -45,7 +48,23 @@ class ShoppingCartContainer extends React.Component {
 
     render() {
         if (this.state.products) {
-            const productList = this.state.products.map((product, index) => {
+            var testas = [
+                {id: 1,
+                image: "aa",
+                title: "pavad"
+                },
+                {
+                    id: 2,
+                    image: "bb",
+                    title: "bbbbpavad"
+                }
+            ] 
+            
+             //Šitas geras
+             const productList = this.state.products.products.map((product, index) => {
+
+             //Perdaryta eilutė
+             //const productList = testas.map((product, index) => {
                 return (
                     <ShoppingCartComponent
                         key={index}
@@ -55,7 +74,7 @@ class ShoppingCartContainer extends React.Component {
                         handleDeleteItem={this.handleDeleteItem}
                     />
                 );
-            });
+            }); 
             return (<div className="container">
 
                 <div className="row">

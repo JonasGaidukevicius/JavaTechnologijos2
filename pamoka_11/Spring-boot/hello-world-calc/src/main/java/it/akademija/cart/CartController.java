@@ -51,7 +51,7 @@ public class CartController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteProductFromCart(@ApiParam(value = "User", required = true) @Valid @PathVariable final String user,
 			@ApiParam(value = "Product id", required = true) @Valid @PathVariable final long id) {
-		cartService.deleteProductFromCart(id);
-		System.out.println("Deleting product: " + id);
+		cartService.deleteProductFromCart(user, id);
+		System.out.println("-----------------------------------------------Deleting product: " + id);
 	}
 }

@@ -12,16 +12,16 @@ class OneProductContainer extends React.Component {
         this.state = {
             id: 0,
             title: "",
-            image: "",
-            description: "",
-            price: 0,
+            //image: "",
+            //description: "",
+            //price: 0,
             quantity: 0
         };
         this.userName = this.context;
     }
     
      handleAddToCart = (userName) => {      
-        axios.post('https://itpro2017.herokuapp.com/api/users/' + userName + '/cart-products', this.state)
+        axios.post('http://localhost:8080/api/users/' + userName + '/cart-products', this.state)
             .then(function (response) {
                 //console.log(response);
             })
@@ -34,7 +34,10 @@ class OneProductContainer extends React.Component {
         const position = this.props.match.params.id;
         axios.get('http://localhost:8080/products/' + (position))
             .then((response) => {
-                this.setState(response.data);
+                //this.setState(response.data);
+                this.setState({id: response.data.id,
+                                title: response.data.title,
+                                quantity: response.data.quantity})
             })
             .catch((error) => {
                 console.log(error);

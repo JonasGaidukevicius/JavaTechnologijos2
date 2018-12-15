@@ -26,10 +26,11 @@ class EditProductContainer extends React.Component {
         console.log("Gavau tokį produktą į redagavimą");
         console.log(this.state);
         console.log(response.data.id);
+        console.log(response.data.title);
         this.setState({id: response.data.id});
         this.setState({title: response.data.title});
         this.setState({image: response.data.productDetails.image});
-        this.setState({description: response.data.productDetails.descripsion});
+        this.setState({description: response.data.productDetails.description});
         this.setState({price: response.data.price});
         this.setState({quantity: response.data.quantity});
       
@@ -93,11 +94,11 @@ class EditProductContainer extends React.Component {
         handleChangeOfQuantity={this.handleChangeOfQuantity}
         handleSubmit={this.handleSubmit}
         fromMenu={this.fromMenu}
-        //currentTitle={this.state.title}
-        //currentImage={this.state.image}
-        //currentDescription={this.state.description}
-        //currentPrice={this.state.price}
-        //currentQuantity={this.state.quantity}
+        currentTitle={this.state.title}
+        currentImage={this.state.image}
+        currentDescription={this.state.description}
+        currentPrice={this.state.price}
+        currentQuantity={this.state.quantity}
       />
     );
   }
