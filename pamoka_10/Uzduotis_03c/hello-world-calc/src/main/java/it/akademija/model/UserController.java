@@ -103,7 +103,7 @@ public class UserController {
 			@PathVariable final String lastName) {
 		return userService.findUsersByFirstNameAndLastName(firstName, lastName);
 	}
-	
+	/*
 	//--------------------Cia turi ieskoti zmoniu pagal vardo ir pavardes fragmenta
 		@RequestMapping(path = "/{partOfFirstName}+{partOfLastName}", method = RequestMethod.GET)
 		@ApiOperation(value="Search users by first and last name part",notes="Returns matched users")
@@ -115,6 +115,6 @@ public class UserController {
 				@Valid
 				@PathVariable final String partOfLastName) {
 			return userService.findUsersByFirstNameContainingAndLastNameContaining(partOfFirstName, partOfLastName);
-		}
+		}*/
 	
 }

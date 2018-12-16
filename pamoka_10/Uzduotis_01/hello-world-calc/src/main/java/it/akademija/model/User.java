@@ -9,7 +9,7 @@ import javax.persistence.Id;
 //Tai yra DTO - data transfer object.
 //Skirta tam, kad butu galima pernesti duomenis (is kur?) i (i kur?)
 @Entity
-public final class User {
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;

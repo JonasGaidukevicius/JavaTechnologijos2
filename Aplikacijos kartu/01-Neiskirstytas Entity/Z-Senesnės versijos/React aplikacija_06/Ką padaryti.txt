@@ -1,0 +1,4 @@
+Aplikacija dirba su spring boot aplikacija.
+Tik dar yra kažkur strigimas dėl produkto įrašymo į krepšelį.
+
+Reikia patvarkyti.
