@@ -1,0 +1,3 @@
+Dabar sistema veikia, bet nėra prekės kiekio, kuris dedamas į krepšelį.
+
+Dabar tai reikia padaryti.

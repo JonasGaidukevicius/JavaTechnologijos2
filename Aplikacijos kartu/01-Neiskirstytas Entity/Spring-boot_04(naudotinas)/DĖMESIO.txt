@@ -1,0 +1,2 @@
+Šitame projekte yra padarytos mokytojo pastabos, kas padarė kodą nesikompiliuojantį.
+Reikia nurodytas pastabas normaliai surašyti į kodą ir tada bus viskas gerai.

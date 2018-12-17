@@ -1,0 +1,12 @@
+vaisiuServisas.getVaisiai().stream().map(
+        		(vaisiusOfService) -> 
+        		  new Vaisius(vaisiusOfService.getPicture(),
+        				  vaisiusOfService.getTitle(),
+        				  vaisiusOfService.getDescription(),
+        				  vaisiusOfService.getLink())
+        		).collect(Collectors.toList());
+
+Stream ir map padeda atlikti tokį dalyką, kaip paimti vieną Listą ir su jo kiekvienu elementu atlikti kažkokią operaciją (šiuo atveju jokios manipuliacijos nedaromos) ir iš gautų rezultatų suformuoti naują Listą.
+Šiuo atveju yra gaunamas objektų VaisiusOfServisas Listas, tada iš kiekvieno objekto, esančio Liste padaromas kitas objektas - Vaisius. Ir tie gauti objektai sudedami į Listą ir grąžinama kaip rezultatas.
+
+
