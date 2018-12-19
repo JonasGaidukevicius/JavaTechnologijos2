@@ -13,7 +13,7 @@ import NavigationContainer from './components/Navigation/NavigationContainer';
 import NewInstitutionContainer from './components/InstitutionAdministration/NewInstitutionContainer';
 import UserContext from './UserContext';
 import InstitutionAdministrationListContainer from './components/InstitutionAdministration/InstitutionAdministrationListContainer';
-import EditProductContainer from './components/InstitutionAdministration/EditProductContainer';
+import EditInstitutionContainer from './components/InstitutionAdministration/EditInstitutionContainer';
 import OneProductContainer from './components/Institutions/OneProductContainer';
 import ShoppingCartContainer from './components/ShoppingCart/ShoppingCartContainer';
 import '../node_modules/jquery/dist/jquery';
@@ -41,11 +41,12 @@ ReactDOM.render((
                 <Switch>
                     <Route exact path='/' component={InstitutionListContainer} />
                     <Route exact path="/institutions/new" component={NewInstitutionContainer} />
+                    <Route exact path="/institutions/:name" component={EditInstitutionContainer} />
                     <Route exact path="/products/:id" component={OneProductContainer} />
                     <Route exact path='/admin' component={InstitutionAdministrationListContainer} />
                     <Route exact path='/pasimokyti' component={Pasimokyti} />          
                     <Route exact path="/admin/products/new" component={NewInstitutionContainer} />       
-                    <Route exact path="/admin/products/:id" component={EditProductContainer} />   
+                    {/* <Route exact path="/admin/products/:id" component={EditProductContainer} />    */}
                     <Route exact path="/shopping-Cart/:user" component={ShoppingCartContainer} />                               
                     <Route path="*" component={NoMatch} />
                     <Route component={NoMatch} />

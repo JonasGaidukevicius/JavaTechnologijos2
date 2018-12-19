@@ -12,13 +12,13 @@ const InstitutionAdministrationLineComponent = (props) => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-4">
+                <div className="col-3">
                     <Link to={linkas}>{props.name}</Link>
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                     <img src={pic} alt="Smartphone" width="50px"></img>
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                     <p>{props.city}</p>
                 </div>
             </div>

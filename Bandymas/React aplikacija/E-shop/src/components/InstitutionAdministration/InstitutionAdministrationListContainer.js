@@ -35,6 +35,7 @@ class InstitutionAdministrationListContainer extends React.Component {
                         name={institution.name}
                         image={institution.image}
                         city={institution.city}
+
                     />
                 );
             });
@@ -43,13 +44,13 @@ class InstitutionAdministrationListContainer extends React.Component {
                          <Link className="btn btn-success" to="/institutions/new">Add new institution</Link>
                          </div>
                          <div className="row">
-                            <div className="col-4">
+                            <div className="col-3">
                                 <p>Institution</p>
                             </div>
-                            <div className="col-4">
+                            <div className="col-3">
                                 <p>Picture</p>
                             </div>
-                            <div className="col-4">
+                            <div className="col-3">
                                 <p>City</p>
                             </div>
                         </div>

@@ -8,7 +8,8 @@ import it.akademija.products.Product;
 import it.akademija.products.ProductRepository;
 
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
-
+	Institution findInstitutionByName(String name);
+	void deleteInstitutionByName(String name);
 	
 	
 }
