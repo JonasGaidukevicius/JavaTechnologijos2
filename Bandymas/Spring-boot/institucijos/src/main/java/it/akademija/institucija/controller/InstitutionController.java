@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import it.akademija.institucija.InstitutionData;
-import it.akademija.institucija.service.InstitutionService;
+import it.akademija.institucija.HolidayData;
+import it.akademija.institucija.service.HolidayService;
 import it.akademija.products.CreateProductCommand;
 import it.akademija.products.ProductData;
 import it.akademija.products.ProductService;
@@ -27,28 +27,28 @@ import it.akademija.products.ProductService;
 @RequestMapping(value = "/institutions")
 public class InstitutionController {
 
-	private final InstitutionService institutionService;
+	private final HolidayService holidayService;
 
 	// konstruktorius
 	@Autowired
-	public InstitutionController(InstitutionService institutionService) {
-		this.institutionService = institutionService;
+	public InstitutionController(HolidayService holidayService) {
+		this.holidayService = holidayService;
 	}
 
 	// Visų institucijų gavimas
 	@RequestMapping(method = RequestMethod.GET)
 	@ApiOperation(value = "Get institution list", notes = "Returns list of existing institutions")
-	public List<InstitutionData> getInstitutionList() {
-		return institutionService.getFullListOfInstitutions();
+	public List<HolidayData> getInstitutionList() {
+		return holidayService.getFullListOfInstitutions();
 	}
 
 	// vienos institucijos gavimas
 	@RequestMapping(path = "/{name}", method = RequestMethod.GET)
 	@ApiOperation(value = "Get institution", notes = "Returns selected institution")
-	public InstitutionData getInstitutionByName(
+	public HolidayData getInstitutionByName(
 			@ApiParam(value = "Institution name", required = true) @Valid @PathVariable final String name) {
 
-		return institutionService.getInstitutionByName(name);
+		return holidayService.getInstitutionByName(name);
 	}
 
 	// naujos institucijos suvedimas
@@ -58,7 +58,7 @@ public class InstitutionController {
 	public void createProduct(
 			@ApiParam(value = "Institution data", required = true) @Valid @RequestBody final CreateInstitutionCommand cic) {
 
-		institutionService.createInstitution(cic.getName(), cic.getCity(), cic.getImage(), cic.getCategory(),
+		holidayService.createInstitution(cic.getName(), cic.getCity(), cic.getImage(), cic.getCategory(),
 				cic.getType(), cic.getTypeOfType());
 	}
 
@@ -71,7 +71,7 @@ public class InstitutionController {
 			@ApiParam(value = "Institution name", required = true) @Valid @PathVariable final String oldName,
 			@ApiParam(value = "Institution data", required = true) @Valid @RequestBody final CreateInstitutionCommand cic) {
 
-		institutionService.updateInstitution(oldName, cic.getName(), cic.getCity(), cic.getImage(), cic.getCategory(),
+		holidayService.updateInstitution(oldName, cic.getName(), cic.getCity(), cic.getImage(), cic.getCategory(),
 				cic.getType(), cic.getTypeOfType());
 
 	}
@@ -82,7 +82,7 @@ public class InstitutionController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@ApiOperation(value = "Delete institution", notes = "Deletes selected institution")
 	public void deleteInstitution(@PathVariable final String name) {
-		institutionService.deleteInstitution(name);
+		holidayService.deleteInstitution(name);
 		System.out.println("Deleting institution: " + name);
 	}
 
